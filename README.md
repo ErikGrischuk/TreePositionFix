@@ -9,7 +9,7 @@ In vanilla RimWorld, trees are drawn aligned to the bottom of their tile. This i
 ## The Fix
 
 This mod nudges tree rendering upward so trees sit centered on their tile. Placement ghost and shadows are adjusted to match. Only trees are affected — grass, bushes, and other plants remain unchanged.
-
+![Before/After](https://github.com/ErikGrischuk/TreePositionFix/blob/main/ezgif-668ab7805dd232da.gif)
 ## Installation
 
 1. Subscribe to [Harmony](https://steamcommunity.com/workshop/filedetails/?id=2009463077) on Steam
