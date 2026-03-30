@@ -20,7 +20,7 @@ Safe to add or remove mid-save.
 
 ## Building from Source
 
-1. Open `Source/CenterTrees/CenterTrees.csproj` in Visual Studio
+1. Open `\Tree Position Fix\Tree Position Fix.csproj` in Visual Studio
 2. Update `<RimWorldDir>` and `<HarmonyDir>` paths to match your system
 3. Build (Release mode)
 4. DLL is copied to `Assemblies/` automatically
