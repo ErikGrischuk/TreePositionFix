@@ -1,0 +1,5 @@
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\CenterTrees.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\CenterTrees.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\CenterTrees.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\bin\Debug\CenterTrees.dll
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\CenterTrees.dll

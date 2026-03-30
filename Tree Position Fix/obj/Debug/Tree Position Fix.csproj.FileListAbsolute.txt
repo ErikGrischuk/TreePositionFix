@@ -1,0 +1,5 @@
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\Tree Position Fix.csproj.AssemblyReference.cache
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\Tree Position Fix.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\Tree Position Fix.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\bin\Debug\TreePositionFix.dll
+C:\Users\Administrator\Downloads\CenterTrees\CenterTrees\Source\CenterTrees\obj\Debug\TreePositionFix.dll
