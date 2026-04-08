@@ -1,0 +1,7 @@
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\Tree Position Fix.csproj.AssemblyReference.cache
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\Tree Position Fix.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\Tree Position Fix.AssemblyInfoInputs.cache
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\Tree Position Fix.AssemblyInfo.cs
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\Tree Position Fix.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\bin\Debug\TreePositionFix.dll
+C:\Users\Administrator\Music\Tree Position Fix 1.0.1\obj\Debug\TreePositionFix.dll
