@@ -1,19 +1,20 @@
 using HarmonyLib;
 using RimWorld;
+using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
 using Verse;
 
 [assembly: AssemblyTitle("TreePositionFix")]
-[assembly: AssemblyVersion("1.0.1.0")]
-[assembly: AssemblyFileVersion("1.0.1.0")]
+[assembly: AssemblyVersion("1.1.1")]
+[assembly: AssemblyFileVersion("1.1.1")]
 
-namespace CenterTrees
+namespace TreePositionFix
 {
     [StaticConstructorOnStartup]
-    public static class CenterTreesMod
+    public static class TreePositionFix
     {
-        static CenterTreesMod()
+        static TreePositionFix()
         {
             var harmony = new Harmony("Emperor.TreePositionFix");
             harmony.PatchAll();
@@ -27,12 +28,35 @@ namespace CenterTrees
         private static readonly FieldInfo GrowthIntField =
             AccessTools.Field(typeof(Plant), "growthInt");
 
-        private const float ZOffset = 0.45f;
+        private const float DefaultZOffset = 0.40f;
 
-        private static bool ShouldOffset(Plant plant)
+        private static readonly HashSet<string> ExcludedTrees = new HashSet<string>
         {
-            return plant.def.plant.IsTree
-                && plant.def.plant.treeCategory != TreeCategory.Mini;
+            "Plant_RatPalm"
+        };
+
+        private static readonly Dictionary<string, float> TreeOffsets = new Dictionary<string, float>
+        {
+            { "Plant_TreeGrayPine", 0.35f },
+            { "Plant_TreePolux", 0.10f },
+            { "Plant_Witchwood", 0.10f },
+            { "Plant_TreeSnagroot", 0.05f },
+            { "Plant_TreeAnima", 0.40f },
+            { "Plant_TreeArchean", 0.20f },
+            { "Plant_TreeGauranlen", 0.40f }
+        };
+
+        private static float GetOffset(Plant plant)
+        {
+            if (!plant.def.plant.IsTree)
+                return 0f;
+            if (plant.def.plant.treeCategory == TreeCategory.Mini)
+                return 0f;
+            if (ExcludedTrees.Contains(plant.def.defName))
+                return 0f;
+            if (TreeOffsets.TryGetValue(plant.def.defName, out float offset))
+                return offset;
+            return DefaultZOffset;
         }
 
         public static bool Prefix(Plant __instance, SectionLayer layer)
@@ -57,7 +81,7 @@ namespace CenterTrees
             int drawnCount = 0;
             int[] positionIndices = PlantPosIndices.GetPositionIndices(__instance);
             bool shadowClampFlag = false;
-            bool applyOffset = ShouldOffset(__instance);
+            float treeOffset = GetOffset(__instance);
 
             for (int i = 0; i < positionIndices.Length; i++)
             {
@@ -102,8 +126,8 @@ namespace CenterTrees
                         drawPos.z = cellBottom + visualSize / 2f;
                         shadowClampFlag = true;
                     }
-                    if (applyOffset)
-                        drawPos.z += ZOffset;
+                    if (treeOffset > 0f)
+                        drawPos.z += treeOffset;
                 }
 
                 bool flip = Rand.Bool;
@@ -172,17 +196,17 @@ namespace CenterTrees
                         + __instance.def.graphicData.shadowData.offset.z;
                 }
 
-                if (__instance.def.plant.maxMeshCount == 1 && applyOffset)
+                if (__instance.def.plant.maxMeshCount == 1 && treeOffset > 0f)
                 {
                     if (shadowClampFlag)
                     {
                         shadowPos.z = position.ToVector3Shifted().z
                             + __instance.def.graphicData.shadowData.offset.z
-                            + ZOffset;
+                            + treeOffset;
                     }
                     else
                     {
-                        shadowPos.z += ZOffset;
+                        shadowPos.z += treeOffset;
                     }
                 }
 
